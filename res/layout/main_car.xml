@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/empty_cart_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg" >
+
+    <RelativeLayout 
+        android:id="@+id/home_top_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/toplogo">
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/no_cart_item"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/home_top_layout"
+        android:layout_marginLeft="15.0dip"
+        android:layout_marginRight="15.0dip"
+        android:layout_marginTop="35.0dip"
+        android:background="@drawable/background_corners"
+        android:padding="15.0dip" >
+
+        <ImageView
+            android:id="@+id/shopping_cat_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30.0dip"
+            android:src="@drawable/empty_cart_bg" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/shopping_cat_icon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20.0dip"
+            android:text="@string/cart_item_hint" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/settle_accounts"
+        style="\@style/common_button"
+        android:layout_width="150.0dip"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/no_cart_item"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12.0dip"
+        android:gravity="center"
+        android:text="去逛逛" />
+
+</RelativeLayout>
