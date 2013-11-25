@@ -1,21 +1,48 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    
+    <style name="Anim_style2" parent="android:Theme.NoTitleBar">         
+        <item name="android:windowAnimationStyle">@style/activityAnimation</item>       
+	</style>
+	<style name="activityAnimation" parent="@android:style/Animation">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_right_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_left_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_left_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_right_out</item>
+    </style>
+    
 	<style name="Title">
-		<item name="android:textColor">#ff000000</item>
-		<item name="android:layout_width">wrap_content</item>
-		<item name="android:layout_height">wrap_content</item>
-		<item name="android:layout_centerVertical">true</item>
-		<item name="android:paddingLeft">10dip</item>
-	</style>
-	
-	<style name="StyleListViewItem">
-	<item name="android:textSize">20px</item>
-	<item name="android:textColor">#ff000000</item>
-	</style>
-	
-	
-	
-	<style name="main_tab_bottom">
+                <item name="android:textColor">#ff000000</item>
+                <item name="android:layout_width">wrap_content</item>
+                <item name="android:layout_height">wrap_content</item>
+                <item name="android:layout_centerVertical">true</item>
+                <item name="android:paddingLeft">10dip</item>
+        </style>
+        
+        <style name="StyleListViewItem">
+        <item name="android:textSize">20px</item>
+        <item name="android:textColor">#ff000000</item>
+        </style>
+        
+        
+        
+        <style name="main_tab_bottom">
         <item name="android:textSize">@dimen/bottom_tab_font_size</item>
         <item name="android:ellipsize">marquee</item>
         <item name="android:gravity">center_horizontal</item>
@@ -29,7 +56,7 @@
         <item name="android:layout_weight">1.0</item>
     </style>
     
-	<style name="Transparent">
+        <style name="Transparent">
         <item name="android:windowBackground">@drawable/transparent_background</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowIsTranslucent">true</item>
@@ -47,4 +74,5 @@
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">1.0dip</item>
     </style>
+
 </resources>

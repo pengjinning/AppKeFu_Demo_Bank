@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.appkefu.lib.ChatViewActivity;
-import com.appkefu.lib.service.UsernameAndKefu;
+import com.appkefu.lib.ui.activity.KFChatActivity;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -21,9 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class HomeActivity extends Activity {
-
-	private static final String SERIAL_KEY = "com.appkefu.lib.username.serialize";
-
+	
 	int[] image = {
 			R.drawable.customer_service, R.drawable.appointment_v2, R.drawable.atm_query, R.drawable.bangzhuzhongxin,
 			R.drawable.caipiaotaocan, R.drawable.caipiaotouzhu, R.drawable.card_mgr, R.drawable.branch_query,
@@ -144,29 +141,20 @@ public class HomeActivity extends Activity {
 			TextView textView = (TextView)view.findViewById(R.id.text);
 			if(textView.getText().equals("在线客服"))
 			{
-				startChat("testusername","admin");
+				chatWithKeFu("admin");
 			}
 			else
 				Toast.makeText(HomeActivity.this, textView.getText(), Toast.LENGTH_SHORT).show();
 		}
 	}
 
-	private void startChat(String username, String kefuName) {
-		
-		String jid = kefuName + "@appkefu.com";
-		Intent intent = new Intent(this, ChatViewActivity.class);
-		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
-		UsernameAndKefu usernameAndKefu = new UsernameAndKefu();
-		usernameAndKefu.setUsername(username);
-		usernameAndKefu.setKefuJID(jid);
-		
-		Bundle mbundle = new Bundle();
-		mbundle.putSerializable(SERIAL_KEY, usernameAndKefu);
-		intent.putExtras(mbundle);
-			
-		startActivity(intent);	
-    }
+	//启动咨询对话框
+	private void chatWithKeFu(String kefuUsername)
+	{
+		Intent intent = new Intent(this, KFChatActivity.class);
+		intent.putExtra("username", kefuUsername);			
+		startActivity(intent);
+	}
 }
 
 

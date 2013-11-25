@@ -2,17 +2,15 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/empty_cart_view"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" 
-    android:background="@drawable/bg">
-  
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg" >
 
-    <RelativeLayout 
+    <RelativeLayout
         android:id="@+id/home_top_layout"
         android:layout_width="fill_parent"
         android:layout_height="45dp"
         android:layout_alignParentTop="true"
-        android:background="@drawable/toplogo">
-
+        android:background="@drawable/toplogo" >
     </RelativeLayout>
 
     <ScrollView
@@ -335,4 +333,5 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
 </RelativeLayout>
