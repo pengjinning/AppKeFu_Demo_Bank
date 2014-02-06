@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.appkefu.lib.interfaces.KFInterfaces;
 import com.appkefu.lib.ui.activity.KFChatActivity;
 
 import android.os.Bundle;
@@ -142,6 +143,7 @@ public class HomeActivity extends Activity {
 			if(textView.getText().equals("在线客服"))
 			{
 				chatWithKeFu("admin");
+				
 			}
 			else
 				Toast.makeText(HomeActivity.this, textView.getText(), Toast.LENGTH_SHORT).show();
@@ -151,9 +153,10 @@ public class HomeActivity extends Activity {
 	//启动咨询对话框
 	private void chatWithKeFu(String kefuUsername)
 	{
-		Intent intent = new Intent(this, KFChatActivity.class);
-		intent.putExtra("username", kefuUsername);			
-		startActivity(intent);
+		KFInterfaces.startChatWithKeFu(this,
+				"admin", //客服用户名
+				"您好，我是微客服小秘书，请问有什么可以帮您的?",  //问候语
+				"咨询客服");//会话窗口标题
 	}
 }
 
