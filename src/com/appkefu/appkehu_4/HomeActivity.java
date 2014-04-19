@@ -152,7 +152,7 @@ public class HomeActivity extends Activity {
 	private void chatWithKeFu(String kefuUsername)
 	{
 		KFInterfaces.startChatWithKeFu(this,
-				"admin", //客服用户名
+				"your_kefu_username", //客服用户名
 				"您好，我是微客服小秘书，请问有什么可以帮您的?",  //问候语
 				"咨询客服");//会话窗口标题
 	}
